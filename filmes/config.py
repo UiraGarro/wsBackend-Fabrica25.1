@@ -1,1 +1,0 @@
-OMDB_API_KEY = 'http://www.omdbapi.com/?i=tt3896198&apikey=bfe21c86'

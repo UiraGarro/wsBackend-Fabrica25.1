@@ -5,10 +5,10 @@
     <title>Pessoa Detalhes</title>
 </head>
 <body>
-    <h1>{{ pessoa.name }}</h1>
-    <p>{{ pessoa.description }}</p>
-    <a href="{% url 'pessoa_update' pessoa.pk %}">Edit</a>
-    <a href="{% url 'pessoa_delete' pessoa.pk %}">Delete</a>
+    <h1>{{ pessoa.nome }}</h1>
+    <p>{{ pessoa.email }}</p>
+    <a href="{% url 'editar_pessoa' pessoa.pk %}">Edit</a>
+    <a href="{% url 'deletar_pessoa' pessoa.pk %}">Delete</a>
     <a href="{% url 'listar_pessoas' %}">Back to List</a>
 </body>
 </html>

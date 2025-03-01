@@ -4,6 +4,8 @@ from django.shortcuts import render
 import requests
 from .models import Pessoa, Tarefa
 from .forms import PessoaForm, TarefaForm
+from django.http import JsonResponse
+from deep_translator import GoogleTranslator
 
 # 🏠 Página inicial
 def home_view(request):
@@ -73,4 +75,10 @@ def obter_dica(request):
         dica = response.json()['slip']['advice']
     else:
         dica = "Não foi possível obter uma dica no momento."
-    return render(request, 'dica.html', {'dica': dica})
+        return render(request, 'dica.html', {'dica': dica})
+
+    dica = response.json().get('slip', {}).get('advice', '')
+
+    # Traduzir dica para português
+    traducao = GoogleTranslator(source='auto', target='pt').translate(dica)
+    return JsonResponse({'dica': traducao})

@@ -43,47 +43,6 @@ O projeto "Dicas Aleatórias 3000" é uma aplicação web que fornece dicas alea
   - Integração com a API Advice Slip para obter dicas em inglês.
   - Uso da biblioteca `deep_translator` para traduzir dicas para português.
 
-## Exemplo de Código
-### home.html
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-    <h1>BEM-VINDO AO <strong>DICAS ALEATÓRIAS 3000</strong></h1>
-    <h2>O QUE DESEJA FAZER?</h2>
-    <ul>
-        <li><a href="{% url 'listar_pessoas' %}">Listar Pessoas</a></li>
-        <br>
-        <li><a href="{% url 'criar_pessoa' %}">Criar Pessoa</a></li>
-        <br>
-        <li><a href="{% url 'obter_dica' %}">Dica Aleatória</a></li>
-        <br>
-        <li><a href="{% url 'listar_tarefas' %}">Listar Tarefas</a></li>
-        <br>
-        <li><a href="{% url 'criar_tarefa' %}">Criar Tarefa</a></li>
-        <br>
-    </ul>
-</body>
-</html>
-
-Função para obter dica traduzida:
-
-import requests
-from deep_translator import GoogleTranslator
-
-def obter_dica_traduzida():
-    response = requests.get('https://api.adviceslip.com/advice')
-    if response.status_code != 200:
-        return "Erro ao obter dica."
-
-    dica = response.json().get('slip', {}).get('advice', '')
-    traducao = GoogleTranslator(source='auto', target='pt').translate(dica)
-    return traducao
-
     Como Executar o Projeto:
 1.Clone o repositório do projeto.
 2.Instale as dependências necessárias utilizando pip install -r requirements.txt.

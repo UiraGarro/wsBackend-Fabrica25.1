@@ -5,10 +5,11 @@
     <title>Tarefa Detalhe</title>
 </head>
 <body>
-    <h1>{{ tarefa.title }}</h1>
-    <p>{{ tarefa.description }}</p>
-    <a href="{% url 'tarefa_update' tarefa.pk %}">Editar</a>
-    <a href="{% url 'tarefa_delete' tarefa.pk %}">Deletar</a>
+    <h1>{{ tarefa.titulo }}</h1>
+    <p>{{ tarefa.descricao }}</p>
+    <p>{{ tarefa.pessoa }}</p>
+    <a href="{% url 'editar_tarefa' tarefa.pk %}">Editar</a>
+    <a href="{% url 'deletar_tarefa' tarefa.pk %}">Deletar</a>
     <a href="{% url 'listar_tarefas' %}">Voltar para lista</a>
 </body>
 </html>

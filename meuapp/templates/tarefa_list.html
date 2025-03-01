@@ -8,9 +8,12 @@
     <h1>Lista de Tarefas</h1>
     <ul>
         {% for tarefa in tarefas %}
-            <li><a href="{% url 'tarefa_detail' tarefa.pk %}">{{ tarefa.title }}</a></li>
+            <li><a href="{% url 'detalhar_tarefa' tarefa.pk %}">{{ tarefa.titulo }}</a></li>
         {% endfor %}
     </ul>
-    <a href="{% url 'tarefa_create' %}">Criar Nova Tarefa</a>
+    <button><a href="{% url 'criar_tarefa' %}">Criar Nova Tarefa</a></button>
+    <br>
+    <br>
+    <button><a href="{% url 'home' %}">Voltar para início</a></button>
 </body>
 </html>

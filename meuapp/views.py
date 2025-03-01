@@ -81,4 +81,4 @@ def obter_dica(request):
 
     # Traduzir dica para português
     traducao = GoogleTranslator(source='auto', target='pt').translate(dica)
-    return JsonResponse({'dica': traducao})
+    return render(request, 'dica.html' ,{'dica': traducao})

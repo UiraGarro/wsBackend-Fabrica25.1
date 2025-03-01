@@ -58,3 +58,10 @@ def obter_dica_traduzida():
     dica = response.json().get('slip', {}).get('advice', '')
     traducao = GoogleTranslator(source='auto', target='pt').translate(dica)
     return traducao
+
+Como Executar o Projeto:
+1.Clone o repositório do projeto.
+2.Instale as dependências necessárias utilizando pip install -r requirements.txt.
+3.Configure o banco de dados e execute as migrações do Django.
+4.Inicie o servidor de desenvolvimento do Django.
+5.Acesse a aplicação através do navegador no endereço http://localhost:8000.

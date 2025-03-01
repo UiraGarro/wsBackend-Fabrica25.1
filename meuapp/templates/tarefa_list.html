@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Tarefas</title>
+</head>
+<body>
+    <h1>Lista de Tarefas</h1>
+    <ul>
+        {% for tarefa in tarefas %}
+            <li><a href="{% url 'tarefa_detail' tarefa.pk %}">{{ tarefa.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'tarefa_create' %}">Criar Nova Tarefa</a>
+</body>
+</html>

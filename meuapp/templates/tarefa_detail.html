@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarefa Detailhe</title>
+</head>
+<body>
+    <h1>{{ tarefa.title }}</h1>
+    <p>{{ tarefa.description }}</p>
+    <a href="{% url 'tarefa_update' tarefa.pk %}">Editar</a>
+    <a href="{% url 'tarefa_delete' tarefa.pk %}">Deletar</a>
+    <a href="{% url 'listar_tarefas' %}">Voltar para lista</a>
+</body>
+</html>

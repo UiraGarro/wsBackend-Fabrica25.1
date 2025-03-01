@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>BEM-VINDO AO <strong>DICAS ALEATÓRIAS 3000</strong></h1>
-    <h2>O QUE DESEJA FAZER?</h2>
-    <ul>
-        <li><a href="{% url 'listar_pessoas' %}">Listar Pessoas</a></li>
-        <br>
-        <li><a href="{% url 'criar_pessoa' %}">Criar Pessoa</a></li>
-        <br>
-        <li><a href="{% url 'obter_dica' %}">Dica Aleatória</a></li>
-        <br>
-        <li><a href="{% url 'listar_tarefas' %}">Listar Tarefas</a></li>
-        <br>
-        <li><a href="{% url 'criar_tarefa' %}">Criar Tarefa</a></li>
-        <br>
-    </ul>
+<body class="bg-light">
+    <div class="container text-center mt-5">
+        <h1 class="display-4">BEM-VINDO AO <strong>DICAS ALEATÓRIAS 3000</strong></h1>
+        <h2 class="my-4">O QUE DESEJA FAZER?</h2>
+        <ul class="list-unstyled">
+            <li class="my-2"><a class="btn btn-primary" href="{% url 'listar_pessoas' %}">Listar Pessoas</a></li>
+            <li class="my-2"><a class="btn btn-success" href="{% url 'criar_pessoa' %}">Criar Pessoa</a></li>
+            <li class="my-2"><a class="btn btn-info" href="{% url 'obter_dica' %}">Dica Aleatória</a></li>
+            <li class="my-2"><a class="btn btn-warning" href="{% url 'listar_tarefas' %}">Listar Tarefas</a></li>
+            <li class="my-2"><a class="btn btn-danger" href="{% url 'criar_tarefa' %}">Criar Tarefa</a></li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

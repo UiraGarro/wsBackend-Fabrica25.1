@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de Pessoas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Lista de Pessoas</h1>
-    <ul>
-        {% for pessoa in pessoas %}
-            <li><a href="{% url 'detalhar_pessoa' pessoa.pk %}">{{ pessoa.nome }}</a></li>
-        {% endfor %}
-    </ul>
-    <button><a href="{% url 'criar_pessoa' %}">Criar Nova Pessoa</a></button>
-    <br>
-    <br> 
-    <button><a href="{% url 'home' %}">Voltar para início</a></button>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Lista de Pessoas</h1>
+        <ul class="list-group">
+            {% for pessoa in pessoas %}
+                <li class="list-group-item">
+                    <a href="{% url 'detalhar_pessoa' pessoa.pk %}">{{ pessoa.nome }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="text-center mt-4">
+            <a class="btn btn-success mr-2" href="{% url 'criar_pessoa' %}">Criar Nova Pessoa</a>
+            <a class="btn btn-primary" href="{% url 'home' %}">Voltar para início</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

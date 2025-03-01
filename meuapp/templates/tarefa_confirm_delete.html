@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Confirm Delete Tarefa</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Tem certeza que quer deletar {{ tarefa.title }}?</h1>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Sim, deletar</button>
-    </form>
-    <a href="{% url 'listar_tarefas' %}">Cancelar</a>
+<body class="bg-light">
+    <div class="container text-center mt-5">
+        <h1 class="display-4">Tem certeza que quer deletar {{ tarefa.title }}?</h1>
+        <form method="post" class="mt-4">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Sim, deletar</button>
+            <a class="btn btn-secondary ml-2" href="{% url 'listar_tarefas' %}">Cancelar</a>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

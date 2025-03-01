@@ -2,18 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>List of Tarefas</title>
+    <title>Lista de Tarefas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Lista de Tarefas</h1>
-    <ul>
-        {% for tarefa in tarefas %}
-            <li><a href="{% url 'detalhar_tarefa' tarefa.pk %}">{{ tarefa.titulo }}</a></li>
-        {% endfor %}
-    </ul>
-    <button><a href="{% url 'criar_tarefa' %}">Criar Nova Tarefa</a></button>
-    <br>
-    <br>
-    <button><a href="{% url 'home' %}">Voltar para início</a></button>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Lista de Tarefas</h1>
+        <ul class="list-group">
+            {% for tarefa in tarefas %}
+                <li class="list-group-item">
+                    <a href="{% url 'detalhar_tarefa' tarefa.pk %}">{{ tarefa.titulo }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="text-center mt-4">
+            <a class="btn btn-success mr-2" href="{% url 'criar_tarefa' %}">Criar Nova Tarefa</a>
+            <a class="btn btn-primary" href="{% url 'home' %}">Voltar para início</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

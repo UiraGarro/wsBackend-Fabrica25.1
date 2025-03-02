@@ -32,6 +32,7 @@ O projeto "Dicas Aleatórias 3000" é uma aplicação web que fornece dicas alea
 - **Frontend:** HTML, CSS
 - **API Externa:** Advice Slip API
 - **Tradução:** Biblioteca `deep_translator`
+- **Banco de dados** MySqlcliente
 
 ## Estrutura do Projeto
 - **Views:**
@@ -42,7 +43,9 @@ O projeto "Dicas Aleatórias 3000" é uma aplicação web que fornece dicas alea
   - Uso da biblioteca `deep_translator` para traduzir dicas para português.
 
 ## Como Executar o Projeto
-1. Clone o repositório do projeto.
+1. Clone o repositório do projeto:
+- git clone https://github.com/UiraGarro/wsBackend-Fabrica25.1
+- cd wsBackend-Fabrica25.1
 2. Instale as dependências necessárias utilizando `pip install -r requirements.txt`.
 3. Configure o banco de dados e execute as migrações do Django utilizando `python manage.py migrate`.
 4. Inicie o servidor de desenvolvimento do Django utilizando `python manage.py runserver`.
